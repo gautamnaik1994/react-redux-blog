@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 const TestComponent = () =>  (
   <div>
-    <h2>About me</h2>
+    <h2>dfgdfgdvsvdsvsdvdsdvs</h2>
   </div>
 )
 
