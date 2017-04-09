@@ -7,11 +7,12 @@ import TestComponent2 from 'testcomponent2';
 export default ()=>(
         <Router>
                 <div>
-                  <Link to="/about">About</Link>
-                    <Link to="/about2">About</Link>        
-                 <Route exact path="/" component={App}/>
-                <Route path="/about" component={TestComponent} />
-                <Route path="/about2" component={TestComponent2} />        
-                </div>        
+                        <Link to={`${match.url}/about`}>About</Link>
+                        <Link to={`${match.url}/about2`}>About</Link>
+                        <Route exact path="/" component={App}>
+                                <Route path="about" component={TestComponent} />
+                                <Route path="about2" component={TestComponent2} />
+                        </Route>
+                </div>
         </Router>
 )

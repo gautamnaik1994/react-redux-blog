@@ -8,11 +8,12 @@ import { Link, IndexRoute } from 'react-router-dom';
 class App extends Component {
     render() {
         return (
-                <div>
-                    <Link to="/about">About</Link>
-                    <Link to="/about2">About</Link>
-                    <h1>APP  </h1>
-                </div>
+            <div>
+                <Link to="/about">About</Link>
+                <Link to="/about2">About</Link>
+                <h1>APP  </h1>
+                
+            </div>
         );
     }
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const TestComponent = () =>  (
+const TestComponent = ({match}) =>  (
   <div>
     <h2>GGGGGGGGGGGGGGGGGGGGGGG</h2>
     <input type="text"/>
