@@ -114,7 +114,7 @@ if (process.env.NODE_ENV === 'production') {
             }
         }),
         new htmlWebpackPlugin({
-            template: 'index.template.html',
+            template: 'views/index.template.html',
             inject: 'body',
         })
     ]

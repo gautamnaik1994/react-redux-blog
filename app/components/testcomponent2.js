@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 const TestComponent2 = () =>  (
   <div>
-    <h2>222222222222222222222</h2>
+    <h2>22222fdgdfgdfgdfg222222</h2>
   </div>
 )
 

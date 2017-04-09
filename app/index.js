@@ -4,7 +4,7 @@ import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware,compose } from 'redux';
 import ReduxPromise from 'redux-promise';
-import App from 'app';
+import Router from './routes';
 
 import reducers from './reducers/';
 
@@ -26,7 +26,7 @@ var configure = (initialState = {}) => {
   }
   return store;
 };
-
+var reduxStore = configure();
 
 // const render = (Component) => {
 //   ReactDOM.render(
@@ -43,7 +43,7 @@ var configure = (initialState = {}) => {
 const render = (Component) => {
   ReactDOM.render(
     <AppContainer>
-      <Provider store={configure()}>
+      <Provider store={reduxStore}>
         
         <Component />
       </Provider>
@@ -52,7 +52,7 @@ const render = (Component) => {
   );
 };
 
-render(App);
+render(Router);
 
 // Hot Module Replacement API
 if (module.hot) {
@@ -60,8 +60,9 @@ if (module.hot) {
     const nextRootReducer = require('./reducers/index');
     store.replaceReducer(nextRootReducer);
   });
-  module.hot.accept('./components/app', () => {
-    render(App)
+  module.hot.accept('./routes.js', () => {
+     const NextRouter = require('./routes.js').default
+    render(NextRouter);
   });
 
 }

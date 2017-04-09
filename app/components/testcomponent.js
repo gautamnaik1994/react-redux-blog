@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 
 const TestComponent = () =>  (
   <div>
-    <h2>dfgdfgdvsvdsvsdvdsdvs</h2>
+    <h2>GGGGGGGGGGGGGGGGGGGGGGG</h2>
+    <input type="text"/>
+  
   </div>
 )
 
