@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware,compose } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import ReduxPromise from 'redux-promise';
 import Router from './routes';
 
@@ -13,7 +13,7 @@ import reducers from './reducers/';
 // const store = createStoreWithMiddleware(reducers);
 
 var configure = (initialState = {}) => {
-  
+
   var store = createStore(reducers, initialState, compose(
     applyMiddleware(ReduxPromise),
     window.devToolsExtension ? window.devToolsExtension() : f => f
@@ -44,7 +44,6 @@ const render = (Component) => {
   ReactDOM.render(
     <AppContainer>
       <Provider store={reduxStore}>
-        
         <Component />
       </Provider>
     </AppContainer>,
@@ -61,7 +60,7 @@ if (module.hot) {
     store.replaceReducer(nextRootReducer);
   });
   module.hot.accept('./routes.js', () => {
-     const NextRouter = require('./routes.js').default
+    const NextRouter = require('./routes.js').default
     render(NextRouter);
   });
 
