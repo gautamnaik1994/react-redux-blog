@@ -1,15 +1,39 @@
 import axios from 'axios';
 
-const API_KEY = '1d47984d24064a2783333bdd93cfbc19';
-const ROOT_URL = `http://api.openweathermap.org/data/2.5/forecast?&appid=${API_KEY}`;
-export const FETCH_WEATHER = 'FETCH_WEATHER';
+const API_KEY = '?key=454545454545';
+const ROOT_URL = `http://reduxblog.herokuapp.com/api`;
+export const FETCH_POSTS = 'FETCH_POSTS';
+export const CREATE_POSTS = 'CREATE_POSTS';
+export const FETCH_POST = 'FETCH_POST';
+export const DELETE_POST = 'DELETE_POST';
 
-export function fetchWeather(city) {
-    const url = `${ROOT_URL}&q=${city},in`;
-    const request = axios.get(url);
-    console.log('Request ', request);
+export function fetchPosts() {
+    const request = axios.get(`${ROOT_URL}/posts${API_KEY}`);
     return {
-        type: FETCH_WEATHER,
-        payload:request
+        type: FETCH_POSTS,
+        payload: request
+    };
+}
+
+export function createPost(props) {
+    const request = axios.post(`${ROOT_URL}/posts${API_KEY}`,props);
+    return {
+        type: CREATE_POSTS,
+        payload: request
+    };
+}
+
+export function fetchPost(id) {
+    const request = axios.get(`${ROOT_URL}/posts/${id}${API_KEY}`);
+    return {
+        type: FETCH_POST,
+        payload: request
+    };
+}
+export function deletePost(id) {
+    const request = axios.delete(`${ROOT_URL}/posts/${id}${API_KEY}`);
+    return {
+        type: DELETE_POST,
+        payload: request
     };
 }
